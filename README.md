@@ -19,9 +19,9 @@ This project uses simple **socio‑cultural and economic features** together wit
 
 ### Hypotheses
 
-* **H1:** Cities with **higher education (BA+)** have **lower** crime rates.
-* **H2:** **Higher poverty** and **higher unemployment** relate to **higher** crime rates.
-* **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features.
+* **H1:** Expecting to see **lower crime rates** in cities with **higher education rates**.
+* **H2:** Forecasting **higher crime rates** in cities with **higher poverty** and **higher unemployment rates**.
+* **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features. 
 
 ---
 
