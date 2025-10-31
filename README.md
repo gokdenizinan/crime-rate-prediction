@@ -75,4 +75,4 @@ All from **U.S. Census – American Community Survey ** at **place** level (city
 5. **Population density (people/km²)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0101_C01_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0101_C01_001E&for=place:*&in=state:06)
 6. **Public transit commute share (%)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0801_C01_086E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0801_C01_086E&for=place:*&in=state:06)
 7. **Residential mobility (% different house 1 year ago)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0701_C04_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S0701_C04_001E&for=place:*&in=state:06)
-8. **Changes in Ethinicity (%)** - [https://usafacts.org/data/topics/people-society/population-and-demographics/our-changing-population/]
+8. **Changes in Ethinicity (%)** - https://usafacts.org/data/topics/people-society/population-and-demographics/our-changing-population/
