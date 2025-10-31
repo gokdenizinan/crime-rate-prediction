@@ -72,7 +72,7 @@ All data collected through **U.S. Census – American Community Survey ** at **p
    I will measure how succesfuly close the model’s predictions are to the actual crime levels and how well it explains the differences between cities.
 
 5. **Identify key factors**
-   I will examine which city features stand up and significantly related to crime rates.
+   I will identify which city features stand out as significant predictors of crime rates.
 
 6. **Apply to a new city**
    Finally, I will use the trained model to estimate the crime level for a new city that was not included in the training data.
