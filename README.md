@@ -28,21 +28,21 @@ This project uses simple **socio‑cultural and economic features** together wit
 ## How I Will Test
 
 1. **Build one dataset**
-   I will combine all information into a single table.
-   Each row will represent one city in one year, including its crime level and several social and economic features.
+   I will be combining all information that I extracted into a single table.
+   Each row will represent one city in one year, including its corresponding crime level and several social, cultural and economic features.
 
 2. **Train and test the model**
-   The model will be trained using data from some cities and tested on others.
+   The model will be trained using data from some cities and then will be put in test on others.
    This will show whether it can predict crime levels for cities it has never seen before.
 
 3. **Use two different models**
-   I will start with a simple linear model and then test a more advanced one to compare their performance.
+   I will start with a simple linear model and then use that model to test a more advanced one to compare their performance.
 
 4. **Evaluate performance**
-   I will measure how close the model’s predictions are to the actual crime levels and how well it explains the differences between cities.
+   I will measure how succesfuly close the model’s predictions are to the actual crime levels and how well it explains the differences between cities.
 
 5. **Identify key factors**
-   I will examine which city features are most strongly related to crime rates.
+   I will examine which city features stand up and significantly related to crime rates.
 
 6. **Apply to a new city**
    Finally, I will use the trained model to estimate the crime level for a new city that was not included in the training data.
@@ -65,7 +65,7 @@ Links below are one example from a city in United States, because I'll be manipu
 
 ### B) Socio‑economic & Demographic Features 
 
-All from **U.S. Census – American Community Survey ** at **place** level (city/town). I’ll download CSVs and use the **Census API** with these tables:
+All data collected through **U.S. Census – American Community Survey ** at **place** level (city/town). I’ll download CSVs and use the **Census API** with these tables:
 
 
 1. **Poverty rate (%)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06)
