@@ -31,8 +31,6 @@ This project uses simple **socio‑cultural and economic features** together wit
 5. **Feature checks**: look at coefficients (linear) or feature importance (forest) to evaluate H1–H3.
 6. **New‑city demo**: plug in features for a city not in training and output a predicted crime rate.
 
-> Keep it simple: small feature set, same year for all fields, and basic plots to sanity‑check results.
-
 ---
 
 ## Where the Data Comes From & How I’ll Collect It
@@ -40,6 +38,8 @@ This project uses simple **socio‑cultural and economic features** together wit
 I start with U.S. cities because open data is easy to access. (I can later repeat the idea at the **country** level.)
 
 ### A) Crime Data (City Portals)
+
+Here below there are some example ways and cities that I will be incorporating in my project:
 
 * **Chicago** — *Crimes – 2001 to Present* (Chicago Data Portal). I export CSV by year; columns include date, offense type, community area.
 * **New York City** — *NYPD Complaint Data* (NYC Open Data). I export CSV; columns include offense, borough, precinct, lat/long.
