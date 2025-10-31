@@ -38,11 +38,12 @@ This project uses simple **socio‑cultural and economic features** together wit
 
 ## Where the Data Comes From & How I’ll Collect It
 
-I start with U.S. cities because open data is easy to access. (I can later repeat the idea at the **country** level.)
 
 ### A) Crime Data (City Portals)
 
 Here below there are some example ways and cities that I will be incorporating in my project:
+
+Links below are one example from a city in United States, because I'll be manipulating for each state therefore it would be inconvenient to list over 20 states' api below.
 
 * **Chicago** — https://catalog.data.gov/dataset/crimes-2001-to-present?utm_source=
 * **New York City** — https://www.nyc.gov/site/nypd/stats/crime-statistics/historical.page
@@ -54,7 +55,6 @@ Here below there are some example ways and cities that I will be incorporating i
 
 All from **U.S. Census – American Community Survey (ACS, 5‑year)** at **place** level (city/town). I’ll download CSVs and use the **Census API** with these tables:
 
-Links below are one example from a city in United States, because I'll be manipulating for each state therefore it would be inconvenient to list over 20 states' api below.
 
 1. **Poverty rate (%)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06)
 2. **Unemployment rate (%)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S2301_C04_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S2301_C04_001E&for=place:*&in=state:06)
