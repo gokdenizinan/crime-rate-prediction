@@ -24,16 +24,33 @@ This project uses simple **socio‑cultural and economic features** together wit
 * **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features.
 
 ---
+Mükemmel! 🎯
+İşte son attığım **akademik ama sade** metnin GitHub reposunun `README.md` dosyasına uygun, Markdown formatında düzenlenmiş hali — başlık yapısı, okunabilirlik ve stil tamamen GitHub standartlarına uygun:
 
-## How I Will Test
+---
 
-1. **Build one clean table**: one row per city per year with target `crime_rate_per_100k` and 5–7 features.
-2. **Train/Test split by city**: hold out whole cities (not random rows) to see if the model generalizes.
-3. **Models**: start with **Linear Regression**; compare with **Random Forest**.
-4. **Metrics**: report **R²** and **MAE/RMSE** on the held‑out cities; compare models.
-5. **Feature checks**: look at coefficients (linear) or feature importance (forest) to evaluate H1–H3.
-6. **New‑city demo**: plug in features for a city not in training and output a predicted crime rate.
+## 🧪 How I Will Test
 
+1. **Build one dataset**
+   I will combine all information into a single table.
+   Each row will represent one city in one year, including its crime level and several social and economic features.
+
+2. **Train and test the model**
+   The model will be trained using data from some cities and tested on others.
+   This will show whether it can predict crime levels for cities it has never seen before.
+
+3. **Use two different models**
+   I will start with a simple linear model and then test a more advanced one to compare their performance.
+
+4. **Evaluate performance**
+   I will measure how close the model’s predictions are to the actual crime levels and how well it explains the differences between cities.
+
+5. **Identify key factors**
+   I will examine which city features are most strongly related to crime rates.
+
+6. **Apply to a new city**
+   Finally, I will use the trained model to estimate the crime level for a new city that was not included in the training data.
+   
 ---
 
 ## Where the Data Comes From & How I’ll Collect It
