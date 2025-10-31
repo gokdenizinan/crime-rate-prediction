@@ -49,7 +49,6 @@ Links below are one example from a city in United States, because I'll be manipu
 * **New York City** — https://www.nyc.gov/site/nypd/stats/crime-statistics/historical.page
 * **Los Angeles** — *Crime Data from 2020 to Present* (LA Open Data). I export CSV; columns include crime code, area, date.
 
-**Target I create**: `crime_rate_per_100k = (crime_count / population) * 100000` for the same city & year.
 
 ### B) Socio‑economic & Demographic Features 
 
