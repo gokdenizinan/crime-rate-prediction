@@ -25,7 +25,7 @@ This project uses simple **socio‑cultural and economic features** together wit
 
 ---
 
-## 🧪 How I Will Test
+## How I Will Test
 
 1. **Build one dataset**
    I will combine all information into a single table.
