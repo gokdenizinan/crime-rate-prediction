@@ -1,142 +1,71 @@
-# Crime Rate Prediction
+# DSA 210 Term Project: Crime Rate Prediction
 
-I use **socio‑cultural and economic features** together with **crime data** to train a simple machine‑learning model. After training on some cities (or countries), I want to enter a **new place** and get a **predicted crime rate**.
+<h3 align="center">Do city stats explain crime, and can we predict a new city's rate?</h3>
 
----
-
-## What this project does
-
-* Brings crime data and city stats into one clean table (same year, same city IDs).
-* Tests which features relate most to crime.
-* Trains a small model (Linear Regression → Random Forest) and checks its accuracy.
-* Lets me predict a crime rate for a city/country the model hasn’t seen.
+This project uses simple **socio‑cultural and economic features** together with **crime data** to train a model. After learning from a set of cities, the goal is to enter a **new city (or country)** and get a **crime‑rate estimate**.
 
 ---
 
-## Data sources I plan to use
+## Research Question
 
-You can start with one city (Chicago is an easy example) and then add more.
+**Can a small set of city features (income, education, unemployment, density, transit use, etc.) explain and predict crime rates across cities?**
 
-### Crime data (city portals)
+### Sub‑Questions
 
-* **Chicago** — *Crimes – 2001 to Present* (Chicago Data Portal). Columns: date, primary_type, ward, community_area, etc.
-* **New York City** — *NYPD Complaint Data (Historic / Current)* (NYC Open Data). Columns: offense, boro, precinct, latitude/longitude.
-* **Los Angeles** — *Crime Data from 2020 to Present* (LA Open Data). Columns: crime code, area, date, lat/long.
+* Which features show the strongest relationship with crime rate?
+* If I hold out entire cities, can the model still predict their crime rate reasonably well?
+* Do results support ideas like “higher income → lower crime” or “higher density → higher crime”?
 
-> I convert raw counts to **crime_rate_per_100k** using city population.
+### Hypotheses
 
-### City indicators (U.S.)
-
-All of these are available from **U.S. Census – American Community Survey (ACS, 5‑year)** at **place** level (city/town). I also added a quick pointer to an example “database/table” name you can look up.
-
-1. **Poverty rate (%)**
-   *Source:* ACS **S1701** (Poverty Status).
-   *Example fields:* `S1701_C03_001E` (percent below poverty).
-
-2. **Unemployment rate (%)**
-   *Source:* ACS **S2301** (Employment Status).
-   *Example fields:* `S2301_C04_001E` (unemployment %).
-
-3. **Educational attainment (% BA or higher)**
-   *Source:* ACS **S1501** (Education).
-   *Example fields:* `S1501_C02_015E` (bachelor’s degree or higher, % of 25+).
-
-4. **Median household income (USD)**
-   *Source:* ACS **S1901** (Income).
-   *Example fields:* `S1901_C01_012E` (median household income).
-
-5. **Population density (people per km²)**
-   *Source:* ACS **S0101** (total population) + **Census Gazetteer** (land area).
-   *How I compute:* `population / land_area_km2` (often I log‑transform density).
-
-6. **Public transit commute share (%)**
-   *Source:* ACS **S0801** (Commuting).
-   *Example fields:* `S0801_C01_086E` (public transportation to work, %).
-
-7. **Residential mobility (% lived in a different house 1 year ago)**
-   *Source:* ACS **S0701** (Geographic Mobility).
-   *Example fields:* `S0701_C04_001E` (moved from a different house, %).
-
-> I align all indicators to the **same reference year** as the crime data. If cities lack some fields, I keep the model simple and drop or impute carefully.
-
-### Optional (country level)
-
-If I test countries instead of cities:
-
-* **Crime index by country** — datasets similar to Numbeo/Kaggle "World Crime Index".
-* **World Bank indicators** — use the API with indicator codes like `NY.GDP.PCAP.CD` (GDP per capita), `SE.ADT.LITR.ZS` (literacy), `SP.URB.TOTL.IN.ZS` (urbanization), `SL.UEM.TOTL.ZS` (unemployment), `SP.POP.TOTL` (population).
+* **H1:** Cities with **higher education (BA+)** have **lower** crime rates.
+* **H2:** **Higher poverty** and **higher unemployment** relate to **higher** crime rates.
+* **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features.
 
 ---
 
-## Method (short and simple)
+## How I Will Test
 
-1. **Collect & clean**: load CSVs, fix city names/IDs (GEOID if using ACS), keep one row per city per year.
-2. **Explore**: quick charts and a basic correlation check.
-3. **Features**: keep 5–7 useful fields; log density if it’s very skewed.
-4. **Train**: start with Linear Regression, then try Random Forest.
-5. **Evaluate**: train/test split; report **R²** and **RMSE/MAE**.
-6. **Predict**: given a new city’s features, output a predicted `crime_rate_per_100k`.
+1. **Build one clean table**: one row per city per year with target `crime_rate_per_100k` and 5–7 features.
+2. **Train/Test split by city**: hold out whole cities (not random rows) to see if the model generalizes.
+3. **Models**: start with **Linear Regression**; compare with **Random Forest**.
+4. **Metrics**: report **R²** and **MAE/RMSE** on the held‑out cities; compare models.
+5. **Feature checks**: look at coefficients (linear) or feature importance (forest) to evaluate H1–H3.
+6. **New‑city demo**: plug in features for a city not in training and output a predicted crime rate.
 
----
-
-## Project structure
-
-```
-.
-├─ data/
-│  ├─ raw/          # original files
-│  └─ processed/    # clean/merged data
-├─ notebooks/
-│  ├─ 01_eda.ipynb
-│  └─ 02_model.ipynb
-├─ src/
-│  ├─ load_and_clean.py
-│  ├─ build_features.py
-│  └─ train_model.py
-├─ reports/
-│  └─ figures/
-├─ requirements.txt
-└─ README.md
-```
+> Keep it simple: small feature set, same year for all fields, and basic plots to sanity‑check results.
 
 ---
 
-## How to run
+## Where the Data Comes From & How I’ll Collect It
 
-1. Create the environment and install:
+I start with U.S. cities because open data is easy to access. (I can later repeat the idea at the **country** level.)
 
-```bash
-python -m venv .venv
-# macOS/Linux
-source .venv/bin/activate
-# Windows
-# .venv/Scripts/activate
-pip install -r requirements.txt
-```
+### A) Crime Data (City Portals)
 
-2. Put source CSVs into `data/raw/`, then build and train:
+Pick one or more:
 
-```bash
-python src/load_and_clean.py
-python src/build_features.py
-python src/train_model.py
-```
+* **Chicago** — *Crimes – 2001 to Present* (Chicago Data Portal). I export CSV by year; columns include date, offense type, community area.
+* **New York City** — *NYPD Complaint Data* (NYC Open Data). I export CSV; columns include offense, borough, precinct, lat/long.
+* **Los Angeles** — *Crime Data from 2020 to Present* (LA Open Data). I export CSV; columns include crime code, area, date.
 
-3. Or open the notebooks and run step by step.
+**Target I create**: `crime_rate_per_100k = (crime_count / population) * 100000` for the same city & year.
 
----
+### B) Socio‑economic & Demographic Features (ACS, Place Level)
 
-## Model I/O
+All from **U.S. Census – American Community Survey (ACS, 5‑year)** at **place** level (city/town). I’ll download CSVs or use the **Census API** with these tables:
 
-**Inputs (example, city level)**
+1. **Poverty rate (%)** — ACS **S1701** (e.g., `S1701_C03_001E`)
+2. **Unemployment rate (%)** — ACS **S2301** (e.g., `S2301_C04_001E`)
+3. **Educational attainment (% BA+)** — ACS **S1501** (e.g., `S1501_C02_015E`)
+4. **Median household income (USD)** — ACS **S1901** (e.g., `S1901_C01_012E`)
+5. **Population density (people/km²)** — ACS **S0101** (population) + **Census Gazetteer** (land area) → `pop/land_area_km2`
+6. **Public transit commute share (%)** — ACS **S0801** (e.g., `S0801_C01_086E`)
+7. **Residential mobility (% different house 1 year ago)** — ACS **S0701** (e.g., `S0701_C04_001E`)
 
-```
-poverty_rate,unemployment_rate,ba_or_higher_share,median_household_income,population_density,transit_commute_share,mobility_rate_1yr
-18.2,7.1,27.4,52000,4300,12.6,16.9
-```
+**Year alignment**: choose one reference year (e.g., 2022) and match all features and crime counts to that year. If a feature is missing for a city, I keep the model simple and drop that city/feature rather than guessing.
 
-**Target**: `crime_rate_per_100k`
+### Optional (Country Level)
 
-**Outputs**: test scores (R², RMSE/MAE), feature importance/weights, and a small function that predicts a new city’s crime rate.
-
----
+* **Crime index by country** (Numbeo/Kaggle‑style datasets).
+* **World Bank indicators (API)**: `NY.GDP.PCAP.CD` (GDP per capita), `SE.ADT.LITR.ZS` (literacy), `SP.URB.TOTL.IN.ZS` (urbanization), `SL.UEM.TOTL.ZS` (unemployment), `SP.POP.TOTL` (population). Merge by country and year.
