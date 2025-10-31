@@ -41,8 +41,8 @@ I start with U.S. cities because open data is easy to access. (I can later repea
 
 Here below there are some example ways and cities that I will be incorporating in my project:
 
-* **Chicago** — (https://catalog.data.gov/dataset/crimes-2001-to-present?utm_source=chatgpt.com)
-* **New York City** — *NYPD Complaint Data* (NYC Open Data). I export CSV; columns include offense, borough, precinct, lat/long.
+* **Chicago** — https://catalog.data.gov/dataset/crimes-2001-to-present?utm_source=
+* **New York City** — https://www.nyc.gov/site/nypd/stats/crime-statistics/historical.page
 * **Los Angeles** — *Crime Data from 2020 to Present* (LA Open Data). I export CSV; columns include crime code, area, date.
 
 **Target I create**: `crime_rate_per_100k = (crime_count / population) * 100000` for the same city & year.
