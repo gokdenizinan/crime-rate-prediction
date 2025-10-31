@@ -60,7 +60,7 @@ Links below are one example from a city in United States, because I'll be manipu
 
 * **Chicago** — https://catalog.data.gov/dataset/crimes-2001-to-present?utm_source=
 * **New York City** — https://www.nyc.gov/site/nypd/stats/crime-statistics/historical.page
-* **Los Angeles** — *Crime Data from 2020 to Present* (LA Open Data). I export CSV; columns include crime code, area, date.
+* **Los Angeles** — https://data.lacity.org/Public-Safety/Crime-Data-from-2010-to-2019/63jg-8b9z/about_data
 
 
 ### B) Socio‑economic & Demographic Features 
