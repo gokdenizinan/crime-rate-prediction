@@ -14,7 +14,7 @@ This project uses simple **socio‑cultural and economic features** together wit
 * If I hold out entire cities, can the model still predict their crime rate reasonably well?
 * Do results support ideas like “higher income → lower crime” or “higher density → higher crime”?
 
-* ## Motivation
+### Motivation
 * As a person who fancies rading crime novels and like watching criminal tv series , as well as , films  I thought that trying to measure and predict crime rates in various cities would be a fun puzzle to solve. Therefore, I set various parameters which I think that are relevant for my project and in relation with crime records. As much as coding gives me joy while tackling some mysterious questions in life, I also wanted to incorporate criminal activities with some socio-cultural aspects in life and trying to see whether they have a relationship or not.
 
 ### Hypotheses
