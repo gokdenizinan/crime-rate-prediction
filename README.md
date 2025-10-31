@@ -24,10 +24,6 @@ This project uses simple **socio‑cultural and economic features** together wit
 * **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features.
 
 ---
-Mükemmel! 🎯
-İşte son attığım **akademik ama sade** metnin GitHub reposunun `README.md` dosyasına uygun, Markdown formatında düzenlenmiş hali — başlık yapısı, okunabilirlik ve stil tamamen GitHub standartlarına uygun:
-
----
 
 ## 🧪 How I Will Test
 
