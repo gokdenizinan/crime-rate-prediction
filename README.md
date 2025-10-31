@@ -4,27 +4,6 @@ This project uses simple **socio‑cultural and economic features** together wit
 
 ---
 
-## Research Question
-
-**Can a small set of city features (income, education, unemployment, density, transit use, etc.) explain and predict crime rates across cities?**
-
-### Sub‑Questions
-
-* Which features show the strongest relationship with crime rate?
-* If I hold out entire cities, can the model still predict their crime rate reasonably well?
-* Do results support ideas like “higher income → lower crime” or “higher density → higher crime”?
-
-### Motivation
-* As a person who fancies rading crime novels and like watching criminal tv series , as well as , films  I thought that trying to measure and predict crime rates in various cities would be a fun puzzle to solve. Therefore, I set various parameters which I think that are relevant for my project and in relation with crime records. As much as coding gives me joy while tackling some mysterious questions in life, I also wanted to incorporate criminal activities with some socio-cultural aspects in life and trying to see whether they have a relationship or not.
-
-### Hypotheses
-
-* **H1:** Expecting to see **lower crime rates** in cities with **higher education rates**.
-* **H2:** Forecasting **higher crime rates** in cities with **higher poverty** and **higher unemployment rates**.
-* **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features. 
-
----
-
 ## Where the Data Comes From & How I’ll Collect It
 
 
@@ -77,3 +56,26 @@ All data collected through **U.S. Census – American Community Survey ** at **p
    Finally, I will use the trained model to estimate the crime level for a new city that was not included in the training data.
 
 ---
+
+
+## Research Question
+
+**Can a small set of city features (income, education, unemployment, density, transit use, etc.) explain and predict crime rates across cities?**
+
+### Sub‑Questions
+
+* Which features show the strongest relationship with crime rate?
+* If I hold out entire cities, can the model still predict their crime rate reasonably well?
+* Do results support ideas like “higher income → lower crime” or “higher density → higher crime”?
+
+### Motivation
+* As a person who fancies rading crime novels and like watching criminal tv series , as well as , films  I thought that trying to measure and predict crime rates in various cities would be a fun puzzle to solve. Therefore, I set various parameters which I think that are relevant for my project and in relation with crime records. As much as coding gives me joy while tackling some mysterious questions in life, I also wanted to incorporate criminal activities with some socio-cultural aspects in life and trying to see whether they have a relationship or not.
+
+### Hypotheses
+
+* **H1:** Expecting to see **lower crime rates** in cities with **higher education rates**.
+* **H2:** Forecasting **higher crime rates** in cities with **higher poverty** and **higher unemployment rates**.
+* **H3:** **Population density** and **transit commute share** are **positively** related to crime rate, but the effect weakens after adding other features.
+
+---
+
