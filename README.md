@@ -42,7 +42,7 @@ Links below are one example from a city in United States, because I'll be manipu
 
 ### B) Socio‑economic & Demographic Features 
 
-All data collected through **U.S. Census – American Community Survey ** at **place** level (city/town). I’ll download CSVs and use the **Census API** with these tables:
+All data collected through **U.S. Census – American Community Survey** at **place** level (city/town). I’ll download CSVs and use the **Census API** with these tables:
 
 
 1. **Poverty rate (%)** — [https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06](https://api.census.gov/data/2023/acs/acs5/subject?get=NAME,S1701_C03_001E&for=place:*&in=state:06)
